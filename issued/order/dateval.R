@@ -1,0 +1,19 @@
+datevalfun<-function(){
+ count<-1
+ aaawmaster<-read.table("aaawmaster")
+ dateval<-numeric(1238)
+ for(i in 1:9911){
+     if(i%%8==0){
+          if(aaawmaster$V3[i]!=0){
+                dateval[count]<-aaawmaster$V3[i]
+			#print(aaawmaster$V3[i])
+          }
+	  else{
+               dateval[count]<-aaawmaster$V4[i]
+          }
+	  #print(dateval[count])
+          count<-count+1
+    }
+ }
+return(dateval)
+}
